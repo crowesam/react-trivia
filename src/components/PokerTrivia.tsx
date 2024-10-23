@@ -62,26 +62,30 @@ const PokerTrivia = () => {
   };
 
   return (
-    <div>
-      {showScore ? (
-        <div className="score-section">
-          You scored {score} out of {questions.length}
+    <>
+    <div classname="category-card">
+    <h2>Poker Trivia</h2> {/* This is the heading added to the component */}
+    {showScore ? (
+      <div className="score-section">
+        You scored {score} out of {questions.length}
+      </div>
+    ) : (
+      <div className="question-section">
+        <div className="question-text">{questions[currentQuestion].question}</div>
+        <div className="answer-section">
+          {questions[currentQuestion].options.map((option) => (
+            <button onClick={() => handleAnswerOptionClick(option)} key={option}>
+              {option}
+            </button>
+          ))}
         </div>
-      ) : (
-        <div className="question-section">
-          <div className="question-text">{questions[currentQuestion].question}</div>
-          <div className="answer-section">
-            {questions[currentQuestion].options.map((option) => (
-              <button onClick={() => handleAnswerOptionClick(option)} key={option}>
-                {option}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
-    </div>
+      </div>
+    )}
+  </div></>
   );
 };
+
+ 
 
 export default PokerTrivia;
 

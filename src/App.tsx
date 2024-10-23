@@ -20,20 +20,22 @@ const App = () => {
       case "Sam's Struggles":
         return <SamsStruggle />;
       default:
-        return <h2>Select a category to start the trivia!</h2>;
+        return <h2 className="select-bg">Select a category to start the trivia!</h2>;
     }
   };
 
   return (
     <>
+    <div className="category-container">
       <h1>Trivia App</h1>
       <div>
-        <button onClick={() => setActiveCategory("Poker")}>Poker Trivia</button>
-        <button onClick={() => setActiveCategory("History")}>History Trivia</button>
-        <button onClick={() => setActiveCategory("React")}>React Trivia</button>
-        <button onClick={() => setActiveCategory("Sam's Struggles")}>Sam's Struggles</button>
+        <button className="category-button" onClick={() => setActiveCategory("Poker")}>Poker Trivia</button>
+        <button className="category-button" onClick={() => setActiveCategory("History")}>History Trivia</button>
+        <button className="category-button" onClick={() => setActiveCategory("React")}>React Trivia</button>
+        <button className="category-button" onClick={() => setActiveCategory("Sam's Struggles")}>Sam's Struggles</button>
       </div>
       {renderActiveCategory()}
+    </div>
     </>
   );
 };

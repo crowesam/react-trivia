@@ -32,7 +32,7 @@ const Trivia = ({ category, questions }: TriviaProps) => {
 
   return (
     <div>
-      <h2>{category} Trivia</h2>
+      <h2 className="cat-header">{category} Trivia</h2>
       {showScore ? (
         <div className="score-section">
           You scored {score} out of {questions.length}

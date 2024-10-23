@@ -47,12 +47,36 @@ button {
   transition: border-color 0.25s;
 }
 button:hover {
-  border-color: #646cff;
+  border-color: #ACDF87;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
+
+ /* Category Button Styling */
+.category-button {
+  background-color: #FF8C42; /* Deep Orange */
+  color: #ffffff;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight:bold!important;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.category-button:hover {
+  background-color: #e6762d; /* Slightly darker on hover */
+  transform: translateY(-3px);
+}
+
+.select-bg{
+  background-color: #d32222;
+}
+
 
 @media (prefers-color-scheme: light) {
   :root {
