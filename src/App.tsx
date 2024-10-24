@@ -1,6 +1,7 @@
 // App.tsx
 import React, { useState } from "react";
 import "./App.css";
+import SplashScreen from "./components/SplashScreen";
 import PokerTrivia from "./components/PokerTrivia";
 import HistoryTrivia from "./components/HistoryTrivia";
 import ReactTrivia from "./components/ReactTrivia";

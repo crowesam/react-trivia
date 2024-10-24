@@ -40,9 +40,9 @@ const Trivia = ({ category, questions }: TriviaProps) => {
       ) : (
         <div className="question-section">
           <div className="question-text">{questions[currentQuestion].question}</div>
-          <div className="answer-section">
+          <div className="choices-container">
             {questions[currentQuestion].options.map((option) => (
-              <button onClick={() => handleAnswerOptionClick(option)} key={option}>
+              <button className="choice-button" onClick={() => handleAnswerOptionClick(option)} key={option}>
                 {option}
               </button>
             ))}

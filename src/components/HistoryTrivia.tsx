@@ -1,16 +1,21 @@
-import Trivia from "./Trivia";
+// components/HistoryTrivia.tsx
+import React from 'react';
 
-const historyQuestions = [
-  {
-    question: "Who was the first president of the United States?",
-    options: ["George Washington", "Thomas Jefferson", "Abraham Lincoln", "John Adams"],
-    answer: "George Washington",
-  },
-  // Add more history questions...
-];
+const HistoryTrivia: React.FC = () => {
+  const playSillyNoise = () => {
+    const audio = new Audio('/KeyboardTypingFastClose.mp3'); // Path to your silly noise file
+    audio.play();
+  };
 
-const HistoryTrivia = () => {
-  return <Trivia category="History" questions={historyQuestions} />;
+  return (
+    <div>
+      <h2>History Trivia</h2>
+      <button onClick={playSillyNoise} className="silly-noise-button">
+        Press for a Silly Noise
+      </button>
+    </div>
+  );
 };
 
 export default HistoryTrivia;
+

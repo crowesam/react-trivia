@@ -1,8 +1,8 @@
-import { useState } from 'react';
+ 
+import Trivia from "./Trivia";
 
-const PokerTrivia = () => {
-  const questions = [
-    {
+const pokerQuestions = [
+     {
       question: "What is the best possible hand in Texas Hold'em?",
       options: ["Full House", "Royal Flush", "Straight Flush", "Four of a Kind"],
       answer: "Royal Flush",
@@ -43,49 +43,9 @@ const PokerTrivia = () => {
       answer: "Flush",
     },
   ];
-
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
-
-  const handleAnswerOptionClick = (option: string) => {
-    if (option === questions[currentQuestion].answer) {
-      setScore(score + 1);
-    }
-
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questions.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      setShowScore(true);
-    }
-  };
-
-  return (
-    <>
-    <div classname="category-card">
-    <h2>Poker Trivia</h2> {/* This is the heading added to the component */}
-    {showScore ? (
-      <div className="score-section">
-        You scored {score} out of {questions.length}
-      </div>
-    ) : (
-      <div className="question-section">
-        <div className="question-text">{questions[currentQuestion].question}</div>
-        <div className="answer-section">
-          {questions[currentQuestion].options.map((option) => (
-            <button onClick={() => handleAnswerOptionClick(option)} key={option}>
-              {option}
-            </button>
-          ))}
-        </div>
-      </div>
-    )}
-  </div></>
-  );
+const PokerTrivia = () => {
+  return <Trivia category="Poker" questions={pokerQuestions} />;
 };
-
- 
 
 export default PokerTrivia;
 

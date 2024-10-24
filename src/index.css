@@ -77,6 +77,12 @@ button:focus-visible {
   background-color: #d32222;
 }
 
+ /* Styling for the question text */
+ .question-text {
+  font-size: 1.5rem; /* Increased size for the question */
+  color: #444;
+  margin: 15px 0 25px 0; /* More spacing around the question text */
+}
 
 @media (prefers-color-scheme: light) {
   :root {
@@ -88,5 +94,43 @@ button:focus-visible {
   }
   button {
     background-color: #f9f9f9;
+  }
+}
+
+/* Container for multiple-choice buttons */
+.choices-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+/* Answer Button Styling */
+.choice-button {
+  background-color: #333; /* Dark background for good contrast */
+  color: #ffffff; /* White text for high readability */
+  border: none;
+  padding: 15px 20px; /* Increased padding for a comfortable click area */
+  margin: 10px; /* Space between buttons */
+  border-radius: 25px; /* Rounded corners for a softer look */
+  font-size: 1.2rem; /* Font size for readability */
+  cursor: pointer;
+  flex: 1 1 45%; /* Flex-grow and flex-basis for responsive wrapping */
+  max-width: 300px; /* Restrict max width for better button alignment */
+  transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+}
+
+/* Hover effect for choice buttons */
+.choice-button:hover {
+  background-color: #444; /* Slightly lighter background on hover */
+  transform: translateY(-3px); /* Lift effect on hover */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow on hover */
+}
+
+/* Responsive Design: Full-width stacking on smaller screens */
+@media (max-width: 600px) {
+  .choice-button {
+    flex: 1 1 100%; /* Full width on smaller screens */
   }
 }
